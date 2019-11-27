@@ -13,7 +13,7 @@ var buttonNumber : Int = 0
 class CustomSegmentedControl : UIView {
     private var buttonTitles : [String]!
     private var buttons : [UIButton] = []
-    private var selectorView : UIView!
+    private var selectorView : UIView = UIView()
     
     var textColor:UIColor = UIColor.colorRGBHex(hex: 0xc4c4c4)
     var selectorViewColor:UIColor = .white
@@ -26,18 +26,24 @@ class CustomSegmentedControl : UIView {
         stack.distribution = .fillEqually
         addSubview(stack)
         
+        // 코드로 constraints를 지정하기 위해 translatesAutoresizeingMaskIntoConstraints를 반드시 false로 해줘야함
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stack.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        stack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        stack.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         stack.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         stack.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
     
     private func configSelectorView(){
         let selectorWidth = frame.width / CGFloat(self.buttonTitles.count)
-        selectorView = UIView(frame: CGRect(x: 0, y: self.frame.height, width: selectorWidth, height: 2))
         selectorView.backgroundColor = selectorViewColor
         addSubview(selectorView)
+        //selectorView = UIView(frame: CGRect(x: 0, y: self.frame.height, width: selectorWidth, height: 2))
+        selectorView.translatesAutoresizingMaskIntoConstraints = false
+        selectorView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
+        selectorView.widthAnchor.constraint(equalToConstant: selectorWidth).isActive = true
+        selectorView.heightAnchor.constraint(equalToConstant: 2).isActive = true
+       
     }
     
     private func createButton(){
@@ -47,7 +53,11 @@ class CustomSegmentedControl : UIView {
         
         for buttonTitle in buttonTitles {
             let button = UIButton(type: .system)
+            
             button.setTitle(buttonTitle, for: .normal)
+            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
+            
+        
             button.addTarget(self, action: #selector(CustomSegmentedControl.buttonAction(sender:)), for: .touchUpInside)
             button.setTitleColor(textColor, for: .normal)
             buttons.append(button)

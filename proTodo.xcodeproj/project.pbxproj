@@ -3,18 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47EE2191DD208FE88F247E74 /* Pods_proTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C40B913A41185621A407F81 /* Pods_proTodo.framework */; };
 		9B3036102341C24E0094550A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B30360F2341C24E0094550A /* AppDelegate.swift */; };
 		9B3036122341C24E0094550A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3036112341C24E0094550A /* SceneDelegate.swift */; };
 		9B3036142341C24E0094550A /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3036132341C24E0094550A /* CustomSegmentedControl.swift */; };
 		9B3036172341C24E0094550A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3036152341C24E0094550A /* Main.storyboard */; };
 		9B3036192341C24F0094550A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3036182341C24F0094550A /* Assets.xcassets */; };
 		9B30361C2341C24F0094550A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B30361A2341C24F0094550A /* LaunchScreen.storyboard */; };
-		9B3036242341C27E0094550A /* CalendarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3036232341C27E0094550A /* CalendarStoryboard.storyboard */; };
-		9B3036262341C28E0094550A /* WiseStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3036252341C28E0094550A /* WiseStoryboard.storyboard */; };
 		9B30362A2341C5940094550A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3036292341C5940094550A /* Extension.swift */; };
 		9B30362D2341CB340094550A /* TodoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B30362C2341CB340094550A /* TodoVC.swift */; };
 		9B5E286D2341F44800750096 /* todoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E286C2341F44800750096 /* todoData.swift */; };
@@ -23,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B0AD274664B216324D9A833 /* Pods-proTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proTodo.debug.xcconfig"; path = "Target Support Files/Pods-proTodo/Pods-proTodo.debug.xcconfig"; sourceTree = "<group>"; };
+		2C40B913A41185621A407F81 /* Pods_proTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B30360C2341C24E0094550A /* proTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B30360F2341C24E0094550A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B3036112341C24E0094550A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,13 +32,12 @@
 		9B3036182341C24F0094550A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B30361B2341C24F0094550A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B30361D2341C24F0094550A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B3036232341C27E0094550A /* CalendarStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarStoryboard.storyboard; sourceTree = "<group>"; };
-		9B3036252341C28E0094550A /* WiseStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WiseStoryboard.storyboard; sourceTree = "<group>"; };
 		9B3036292341C5940094550A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9B30362C2341CB340094550A /* TodoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoVC.swift; sourceTree = "<group>"; };
 		9B5E286C2341F44800750096 /* todoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoData.swift; sourceTree = "<group>"; };
 		9B5E286E2341FA0500750096 /* todoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoCell.swift; sourceTree = "<group>"; };
 		9B8DA4742341EFE300096A0E /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		F9F995DE94BE73D8DD1A3085 /* Pods-proTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proTodo.release.xcconfig"; path = "Target Support Files/Pods-proTodo/Pods-proTodo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47EE2191DD208FE88F247E74 /* Pods_proTodo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EFAA7C113E49A38CC165AD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C40B913A41185621A407F81 /* Pods_proTodo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B3036032341C24E0094550A = {
 			isa = PBXGroup;
 			children = (
 				9B30360E2341C24E0094550A /* proTodo */,
 				9B30360D2341C24E0094550A /* Products */,
+				EBACBB5C0F53D7094AFB9E3B /* Pods */,
+				2EFAA7C113E49A38CC165AD5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,9 +81,9 @@
 		9B30360E2341C24E0094550A /* proTodo */ = {
 			isa = PBXGroup;
 			children = (
+				9B30361A2341C24F0094550A /* LaunchScreen.storyboard */,
 				9B5E286B2341F43000750096 /* Data */,
 				9B8DA4762341F1F200096A0E /* Todo */,
-				9B3036282341C3310094550A /* Storyboard */,
 				9B3036272341C31E0094550A /* Extension */,
 				9B3036182341C24F0094550A /* Assets.xcassets */,
 				9B30361D2341C24F0094550A /* Info.plist */,
@@ -90,16 +101,6 @@
 				9B3036292341C5940094550A /* Extension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		9B3036282341C3310094550A /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				9B30361A2341C24F0094550A /* LaunchScreen.storyboard */,
-				9B3036232341C27E0094550A /* CalendarStoryboard.storyboard */,
-				9B3036252341C28E0094550A /* WiseStoryboard.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		9B5E286B2341F43000750096 /* Data */ = {
@@ -120,6 +121,15 @@
 			path = Todo;
 			sourceTree = "<group>";
 		};
+		EBACBB5C0F53D7094AFB9E3B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B0AD274664B216324D9A833 /* Pods-proTodo.debug.xcconfig */,
+				F9F995DE94BE73D8DD1A3085 /* Pods-proTodo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B3036202341C24F0094550A /* Build configuration list for PBXNativeTarget "proTodo" */;
 			buildPhases = (
+				C845B945341672653A12515F /* [CP] Check Pods Manifest.lock */,
 				9B3036082341C24E0094550A /* Sources */,
 				9B3036092341C24E0094550A /* Frameworks */,
 				9B30360A2341C24E0094550A /* Resources */,
+				23BD5BBDCC729DAE6EF1765E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,12 +193,52 @@
 				9B30361C2341C24F0094550A /* LaunchScreen.storyboard in Resources */,
 				9B3036192341C24F0094550A /* Assets.xcassets in Resources */,
 				9B3036172341C24E0094550A /* Main.storyboard in Resources */,
-				9B3036242341C27E0094550A /* CalendarStoryboard.storyboard in Resources */,
-				9B3036262341C28E0094550A /* WiseStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23BD5BBDCC729DAE6EF1765E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-proTodo/Pods-proTodo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-proTodo/Pods-proTodo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-proTodo/Pods-proTodo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C845B945341672653A12515F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-proTodo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B3036082341C24E0094550A /* Sources */ = {
@@ -342,6 +394,7 @@
 		};
 		9B3036212341C24F0094550A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B0AD274664B216324D9A833 /* Pods-proTodo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -359,6 +412,7 @@
 		};
 		9B3036222341C24F0094550A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9F995DE94BE73D8DD1A3085 /* Pods-proTodo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
