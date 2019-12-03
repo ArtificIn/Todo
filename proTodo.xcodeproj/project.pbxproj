@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		47EE2191DD208FE88F247E74 /* Pods_proTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C40B913A41185621A407F81 /* Pods_proTodo.framework */; };
+		9B1E6E1E23963B6D002019D8 /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1E6E1D23963B6D002019D8 /* CreateVC.swift */; };
+		9B1E6E2023965452002019D8 /* ColorCollectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1E6E1F23965452002019D8 /* ColorCollectCell.swift */; };
 		9B3036102341C24E0094550A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B30360F2341C24E0094550A /* AppDelegate.swift */; };
 		9B3036122341C24E0094550A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3036112341C24E0094550A /* SceneDelegate.swift */; };
 		9B3036142341C24E0094550A /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3036132341C24E0094550A /* CustomSegmentedControl.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		0B0AD274664B216324D9A833 /* Pods-proTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proTodo.debug.xcconfig"; path = "Target Support Files/Pods-proTodo/Pods-proTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		2C40B913A41185621A407F81 /* Pods_proTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_proTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B1E6E1D23963B6D002019D8 /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
+		9B1E6E1F23965452002019D8 /* ColorCollectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectCell.swift; sourceTree = "<group>"; };
 		9B30360C2341C24E0094550A /* proTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B30360F2341C24E0094550A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B3036112341C24E0094550A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				9B30362C2341CB340094550A /* TodoVC.swift */,
 				9B3036152341C24E0094550A /* Main.storyboard */,
 				9B5E286E2341FA0500750096 /* todoCell.swift */,
+				9B1E6E1D23963B6D002019D8 /* CreateVC.swift */,
+				9B1E6E1F23965452002019D8 /* ColorCollectCell.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1E6E2023965452002019D8 /* ColorCollectCell.swift in Sources */,
 				9B30362D2341CB340094550A /* TodoVC.swift in Sources */,
 				9B3036142341C24E0094550A /* CustomSegmentedControl.swift in Sources */,
 				9B8DA4752341EFE300096A0E /* Checkbox.swift in Sources */,
@@ -252,6 +259,7 @@
 				9B3036122341C24E0094550A /* SceneDelegate.swift in Sources */,
 				9B30362A2341C5940094550A /* Extension.swift in Sources */,
 				9B5E286D2341F44800750096 /* todoData.swift in Sources */,
+				9B1E6E1E23963B6D002019D8 /* CreateVC.swift in Sources */,
 				9B5E286F2341FA0500750096 /* todoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

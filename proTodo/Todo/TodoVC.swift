@@ -46,7 +46,7 @@ extension TodoVC : UITableViewDelegate, UITableViewDataSource {
         let todo = Database.arrayList[indexPath.row]
         let cell: todoCell = tableView.dequeueReusableCell(withIdentifier: "todocell") as! todoCell
         
-        cell.textField?.text = todo.memo ?? ""
+        cell.textField?.text = todo.memo 
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         return cell
@@ -70,12 +70,12 @@ extension TodoVC : UITableViewDelegate, UITableViewDataSource {
         
         let label = UILabel()
         label.frame = CGRect.init(x:20, y:10, width: headerView.frame.width-10, height: headerView.frame.height - 10)
-        label.text = "9월 30일 할일 목록"
+        label.text = "12월 2일 할일 목록"
         label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 24)
         
         let label2 = UILabel()
-        label2.frame = CGRect.init(x: tableView.frame.width / 10 * 8, y: 20, width: 41, height: 17)
+        label2.frame = CGRect.init(x: tableView.frame.width / 10 * 7.6, y: 20, width: 41, height: 17)
         label2.text = "반복"
         label2.textColor = UIColor.white
         label2.font = UIFont.systemFont(ofSize: 18)
@@ -111,14 +111,8 @@ extension TodoVC : UITableViewDelegate, UITableViewDataSource {
         }
         todoList.reloadData()
     }
-    
-  
-    
 }
 
 extension TodoVC {
-    // 플러스 버튼 클릭시 새로 생성하는 화면 구성
-    func plusbtnSetting(){
-        
-    }
+    
 }
