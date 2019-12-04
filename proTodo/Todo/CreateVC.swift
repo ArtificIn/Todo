@@ -14,7 +14,8 @@ class CreateVC: UIViewController {
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var todoView: UIView!
-    
+    var selectColor = 0xffffff
+    var colorTouch = false
     let items = [
         0xfff8b6, 0xffe4a3, 0xffbd91, 0xff8d71, 0xff707e,
         0xffc100, 0xff9a00, 0xff7400, 0xff4d00, 0xff0000,
@@ -35,28 +36,27 @@ extension CreateVC {
     func gestureSetting(){
         let gesture = UITapGestureRecognizer(target: self, action: #selector(colorAction))
         self.colorView.addGestureRecognizer(gesture)
+       
     }
-    
-    
     
     @objc func colorAction(gestureRecognizer: UIPanGestureRecognizer){
         
-        if gestureRecognizer.state == UIGestureRecognizer.State.began || gestureRecognizer.state == UIGestureRecognizer.State.changed {
-            let translation = gestureRecognizer.translation(in: self.todoView)
-            print(gestureRecognizer.view!.center.y)
-            
-            if(gestureRecognizer.view!.center.y < 555){
-                gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: gestureRecognizer.view!.center.y + translation.y)
-            }else {
-                gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: 554)
-            }
-            gestureRecognizer.setTranslation(CGPoint(x: 0,y: 0), in: self.view)
-            
+        if colorTouch == false {
+//            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height + 233)
+            colorTouch = true
+        } else {
+//            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 233)
+            colorTouch = false
         }
     }
+}
+
+// 데이터 처리
+extension CreateVC {
     
 }
 
+// 콜렉션 뷰
 extension CreateVC : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
@@ -64,7 +64,11 @@ extension CreateVC : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = ColorCollectionView.cellForItem(at: indexPath)
+        selectColor = items[indexPath.item]
+        // int -> hex
+        // var st = NSString(format: "%02X", selectColor)
         cell?.backgroundColor = UIColor.darkGray
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
