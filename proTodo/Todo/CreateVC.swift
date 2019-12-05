@@ -14,6 +14,8 @@ class CreateVC: UIViewController {
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var todoView: UIView!
+    @IBOutlet weak var completeBtn: UIButton!
+    
     var selectColor = 0xffffff
     var colorTouch = false
     let items = [
@@ -23,32 +25,59 @@ class CreateVC: UIViewController {
         0xdaf8e3, 0x97ebdb, 0x00c2c7, 0x0086ad, 0x005582,
         0xfadbe0, 0xeaadbd, 0xb88a9f, 0x876880, 0x554562]
     
+    override func viewWillAppear(_ animated: Bool) {
+        func keyboardSetting(){
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         self.hideKeyboardTapped()
-        self.gestureSetting()
+        self.clickSetting()
     }
 }
 
 // 버튼 터치
 extension CreateVC {
-    func gestureSetting(){
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(colorAction))
-        self.colorView.addGestureRecognizer(gesture)
-       
+    func clickSetting(){
+        dateViewClicked()
+        completeButton()
     }
     
-    @objc func colorAction(gestureRecognizer: UIPanGestureRecognizer){
+    // 날자 선택 창
+    func dateViewClicked(){
         
-        if colorTouch == false {
-//            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height + 233)
-            colorTouch = true
-        } else {
-//            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 233)
-            colorTouch = false
-        }
     }
+    
+    func completeButton(){
+        completeBtn.addTarget(self, action: #selector(completeAction), for: .touchUpInside)
+    }
+    @objc func completeAction(){
+        dismiss(animated: true)
+    }
+    
+    @objc func keyboardWillAppear(notification: NSNotification){
+                 if let KeyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                     if self.view.frame.origin.y == 0 {
+                         self.view.frame.origin.y -= KeyboardSize.height
+                         self.todoView.frame.origin.y -= KeyboardSize.height
+                         self.completeBtn.frame.origin.y -= KeyboardSize.height
+                     }
+                 }
+             }
+             
+             @objc func keyboardWillDisappear(notification: NSNotification){
+                 if let KeyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                     if self.view.frame.origin.y != 0 {
+                         self.view.frame.origin.y += KeyboardSize.height
+                         self.todoView.frame.origin.y += KeyboardSize.height
+                         self.completeBtn.frame.origin.y += KeyboardSize.height
+                     }
+                 }
+             }
 }
 
 // 데이터 처리
