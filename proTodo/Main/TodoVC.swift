@@ -9,8 +9,9 @@
 import UIKit
 
 class TodoVC: UIViewController {
-    @IBOutlet weak var todoList:UITableView!
-    @IBOutlet weak var plusBtn:UIButton!
+    @IBOutlet weak var todoList: UITableView!
+    @IBOutlet weak var plusBtn: UIButton!
+    @IBOutlet weak var menuBar: UIStackView!
     var selectedIndex : NSInteger! = -1
     
     
@@ -18,7 +19,6 @@ class TodoVC: UIViewController {
         super.viewDidLoad()
         
         delegate()
-        createSegmentedControl()
         self.hideKeyboardTapped()
     }
     
@@ -28,13 +28,20 @@ class TodoVC: UIViewController {
         self.todoList.isEditing = true
     }
     
-    private func createSegmentedControl(){
-        let codeSegmented = CustomSegmentedControl(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 50),
-            buttonTitle:["할일 목록", "달력", "명언함"])
+    //func settingMenuBar(){
         
-        codeSegmented.backgroundColor = UIColor.colorRGBHex(hex: 0x373535)
-        view.addSubview(codeSegmented)
-    }
+//        var underView = UIView(frame: CGRect(x:48, y:2, width:menuBar.indexPath.width, height:2))
+//        underView.backgroundColor = UIColor.colorRGBHex(hex: 0x373535)
+//        self.view.addSubview(underView)
+    //}
+    
+//    private func createSegmentedControl(){
+//        let codeSegmented = CustomSegmentedControl(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 50),
+//            buttonTitle:["할일 목록", "달력", "명언함"])
+//
+//        codeSegmented.backgroundColor = UIColor.colorRGBHex(hex: 0x373535)
+//        view.addSubview(codeSegmented)
+//    }
 }
 
 extension TodoVC : UITableViewDelegate, UITableViewDataSource {

@@ -21,6 +21,11 @@
 		9B5E286D2341F44800750096 /* todoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E286C2341F44800750096 /* todoData.swift */; };
 		9B5E286F2341FA0500750096 /* todoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E286E2341FA0500750096 /* todoCell.swift */; };
 		9B8DA4752341EFE300096A0E /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DA4742341EFE300096A0E /* Checkbox.swift */; };
+		9BD1E72D23C5CE66007DCCEA /* CalendarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD1E72C23C5CE66007DCCEA /* CalendarStoryboard.storyboard */; };
+		9BD1E72F23C5CE73007DCCEA /* SentenceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD1E72E23C5CE73007DCCEA /* SentenceStoryboard.storyboard */; };
+		9BD1E73523C5DBA9007DCCEA /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD1E73423C5DBA9007DCCEA /* CustomTabbar.swift */; };
+		9BD1E73723C5DE45007DCCEA /* CustomTabbarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD1E73623C5DE45007DCCEA /* CustomTabbarCell.swift */; };
+		9BD1E73923C5DE9B007DCCEA /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD1E73823C5DE9B007DCCEA /* PageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		9B5E286C2341F44800750096 /* todoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoData.swift; sourceTree = "<group>"; };
 		9B5E286E2341FA0500750096 /* todoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoCell.swift; sourceTree = "<group>"; };
 		9B8DA4742341EFE300096A0E /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		9BD1E72C23C5CE66007DCCEA /* CalendarStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarStoryboard.storyboard; sourceTree = "<group>"; };
+		9BD1E72E23C5CE73007DCCEA /* SentenceStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SentenceStoryboard.storyboard; sourceTree = "<group>"; };
+		9BD1E73423C5DBA9007DCCEA /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		9BD1E73623C5DE45007DCCEA /* CustomTabbarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarCell.swift; sourceTree = "<group>"; };
+		9BD1E73823C5DE9B007DCCEA /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		F9F995DE94BE73D8DD1A3085 /* Pods-proTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-proTodo.release.xcconfig"; path = "Target Support Files/Pods-proTodo/Pods-proTodo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,9 +95,11 @@
 		9B30360E2341C24E0094550A /* proTodo */ = {
 			isa = PBXGroup;
 			children = (
+				9BD1E72B23C5CDF4007DCCEA /* Sentence */,
+				9BD1E72A23C5CDED007DCCEA /* Calendar */,
+				9BD1E72923C5CDDF007DCCEA /* Main */,
 				9B30361A2341C24F0094550A /* LaunchScreen.storyboard */,
 				9B5E286B2341F43000750096 /* Data */,
-				9B8DA4762341F1F200096A0E /* Todo */,
 				9B3036272341C31E0094550A /* Extension */,
 				9B3036182341C24F0094550A /* Assets.xcassets */,
 				9B30361D2341C24F0094550A /* Info.plist */,
@@ -103,6 +115,9 @@
 				9B3036112341C24E0094550A /* SceneDelegate.swift */,
 				9B30360F2341C24E0094550A /* AppDelegate.swift */,
 				9B3036292341C5940094550A /* Extension.swift */,
+				9BD1E73423C5DBA9007DCCEA /* CustomTabbar.swift */,
+				9BD1E73623C5DE45007DCCEA /* CustomTabbarCell.swift */,
+				9BD1E73823C5DE9B007DCCEA /* PageCell.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -115,16 +130,40 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		9B8DA4762341F1F200096A0E /* Todo */ = {
+		9B8DA4762341F1F200096A0E /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				9B30362C2341CB340094550A /* TodoVC.swift */,
-				9B3036152341C24E0094550A /* Main.storyboard */,
-				9B5E286E2341FA0500750096 /* todoCell.swift */,
 				9B1E6E1D23963B6D002019D8 /* CreateVC.swift */,
 				9B1E6E1F23965452002019D8 /* ColorCollectCell.swift */,
 			);
-			path = Todo;
+			path = Create;
+			sourceTree = "<group>";
+		};
+		9BD1E72923C5CDDF007DCCEA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9B8DA4762341F1F200096A0E /* Create */,
+				9B5E286E2341FA0500750096 /* todoCell.swift */,
+				9B30362C2341CB340094550A /* TodoVC.swift */,
+				9B3036152341C24E0094550A /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9BD1E72A23C5CDED007DCCEA /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				9BD1E72C23C5CE66007DCCEA /* CalendarStoryboard.storyboard */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		9BD1E72B23C5CDF4007DCCEA /* Sentence */ = {
+			isa = PBXGroup;
+			children = (
+				9BD1E72E23C5CE73007DCCEA /* SentenceStoryboard.storyboard */,
+			);
+			path = Sentence;
 			sourceTree = "<group>";
 		};
 		EBACBB5C0F53D7094AFB9E3B /* Pods */ = {
@@ -196,9 +235,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BD1E72F23C5CE73007DCCEA /* SentenceStoryboard.storyboard in Resources */,
 				9B30361C2341C24F0094550A /* LaunchScreen.storyboard in Resources */,
 				9B3036192341C24F0094550A /* Assets.xcassets in Resources */,
 				9B3036172341C24E0094550A /* Main.storyboard in Resources */,
+				9BD1E72D23C5CE66007DCCEA /* CalendarStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +300,11 @@
 				9B3036122341C24E0094550A /* SceneDelegate.swift in Sources */,
 				9B30362A2341C5940094550A /* Extension.swift in Sources */,
 				9B5E286D2341F44800750096 /* todoData.swift in Sources */,
+				9BD1E73923C5DE9B007DCCEA /* PageCell.swift in Sources */,
+				9BD1E73723C5DE45007DCCEA /* CustomTabbarCell.swift in Sources */,
 				9B1E6E1E23963B6D002019D8 /* CreateVC.swift in Sources */,
 				9B5E286F2341FA0500750096 /* todoCell.swift in Sources */,
+				9BD1E73523C5DBA9007DCCEA /* CustomTabbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
