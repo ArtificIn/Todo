@@ -8,7 +8,6 @@
 
 import UIKit
 
-var buttonNumber : Int = 0
 
 class CustomSegmentedControl : UIView {
     private var buttonTitles : [String]!
@@ -18,6 +17,7 @@ class CustomSegmentedControl : UIView {
     var textColor:UIColor = UIColor.colorRGBHex(hex: 0xc4c4c4)
     var selectorViewColor:UIColor = .white
     var selectortextColor:UIColor = .white
+    var buttonNumber : Int = 0
     
     private func configStackView(){
         let stack = UIStackView(arrangedSubviews: buttons)

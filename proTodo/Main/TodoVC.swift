@@ -11,44 +11,30 @@ import UIKit
 class TodoVC: UIViewController {
     @IBOutlet weak var todoList: UITableView!
     @IBOutlet weak var plusBtn: UIButton!
-    @IBOutlet weak var menuBar: UIStackView!
+    @IBOutlet weak var menuBar: UICollectionView!
+    @IBOutlet weak var leftTapBtn: UIView!
+    @IBOutlet weak var rightTapBtn: UIView!
+    
     var selectedIndex : NSInteger! = -1
+    var isReapeat : Bool = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.todoList.reloadData()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ButtonSetting()
         delegate()
-        //hideKeyboardTapped()
+        createSegmentedControl()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    private func delegate(){
-        todoList.delegate = self
-        todoList.dataSource = self
-        self.todoList.isEditing = true
-    }
-    
-    //func settingMenuBar(){
-        
-//        var underView = UIView(frame: CGRect(x:48, y:2, width:menuBar.indexPath.width, height:2))
-//        underView.backgroundColor = UIColor.colorRGBHex(hex: 0x373535)
-//        self.view.addSubview(underView)
-    //}
-    
-//    private func createSegmentedControl(){
-//        let codeSegmented = CustomSegmentedControl(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 50),
-//            buttonTitle:["할일 목록", "달력", "명언함"])
-//
-//        codeSegmented.backgroundColor = UIColor.colorRGBHex(hex: 0x373535)
-//        view.addSubview(codeSegmented)
-//    }
 }
 
 extension TodoVC : UITableViewDelegate, UITableViewDataSource {
@@ -67,9 +53,9 @@ extension TodoVC : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -115,7 +101,6 @@ extension TodoVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
     }
     
     // 테이블 셀 클릭 시 반응
@@ -130,5 +115,42 @@ extension TodoVC : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension TodoVC {
+    private func ButtonSetting(){
+        let leftGesture = UIGestureRecognizer(target: self.leftTapBtn, action: #selector(touchLeftBtn))
+        let rightGesture = UIGestureRecognizer(target: self.rightTapBtn, action: #selector(touchRightBtn))
+        leftTapBtn.isUserInteractionEnabled = true
+        rightTapBtn.isUserInteractionEnabled = true
+        leftTapBtn.addGestureRecognizer(leftGesture)
+        rightTapBtn.addGestureRecognizer(rightGesture)
+    }
     
+    private func delegate(){
+        todoList.delegate = self
+        todoList.dataSource = self
+        self.todoList.isEditing = true
+    }
+        
+    //    func settingMenuBar(){
+    //        var underView = UIView(frame: CGRect(x:48, y:2, width: menuBar.indexPath.width, height:2))
+    //        underView.backgroundColor = UIColor.colorRGBHex(hex: 0x373535)
+    //        self.view.addSubview(underView)
+    //    }
+        
+    private func createSegmentedControl(){
+        let codeSegmented = CustomSegmentedControl(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 50),
+                buttonTitle:["할일 목록", "달력", "명언함"])
+
+        codeSegmented.backgroundColor = UIColor.colorRGBHex(hex: 0x373535)
+        view.addSubview(codeSegmented)
+    }
+    
+    // present 달력 창
+    @objc func touchLeftBtn(){
+        print("left click!")
+    }
+    
+    // present 명언 창
+    @objc func touchRightBtn(){
+        print("right click!")
+    }
 }

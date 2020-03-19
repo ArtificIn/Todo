@@ -33,6 +33,7 @@ class CustomMenuBar: UIView {
     
     
 }
+
 extension CustomMenuBar : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
@@ -43,5 +44,7 @@ extension CustomMenuBar : UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.customMenuBar(scrollTo: indexPath.row)
+    }
 }

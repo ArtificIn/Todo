@@ -9,7 +9,12 @@
 import UIKit
 
 
-class CreateVC: UIViewController {
+protocol todoNumber {
+    var item : Todo {get}
+    func returnPosition()
+}
+
+class CreateVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ColorCollectionView: UICollectionView!
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var colorView: UIView!
@@ -36,13 +41,13 @@ class CreateVC: UIViewController {
         self.view.endEditing(true)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.touchSetting()
         self.TextFieldSetting()
     }
 }
+
 
 
 // logic code
@@ -65,10 +70,11 @@ extension CreateVC {
         guard let memo = textField.text else {return}
         //guard let
         
-        let newTodo = Todo(memo: memo, color: selectColor, update: Date())
-        
-        Database.arrayList.append(newTodo)
-        Database.saveData()
+        if (memo != ""){
+            let newTodo = Todo(memo: memo, color: selectColor, update: Date())
+            Database.arrayList.append(newTodo)
+            Database.saveData()
+        }
         presentingViewController?.viewWillAppear(true)
         // must insert save code
         dismiss(animated: true)
@@ -97,9 +103,6 @@ extension CreateVC {
 }
 
 
-extension CreateVC : UITextFieldDelegate {
-
-}
 
 
 // collectionView control

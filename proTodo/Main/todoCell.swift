@@ -11,8 +11,10 @@ import UIKit
 class todoCell: UITableViewCell {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var repeatBtn: Checkbox!
     
     let leftMarginForLabel : CGFloat = 15.0
+    var isRepeat : Bool = false
     var listItems:Todo? {
         didSet{
             textField.text = listItems!.memo
@@ -56,5 +58,22 @@ extension todoCell : UITextFieldDelegate {
             listItems?.memo = textField.text!
         }
         return true
+    }
+}
+
+
+extension todoCell {
+    func ButtonSetting(){
+        repeatBtn.addTarget(self, action: #selector(touchRepeatBtn), for: .touchUpInside)
+    }
+    
+    @objc func touchRepeatBtn(){
+        isRepeat != isRepeat
+        
+        if isRepeat == true {
+            //Database.repeatList.append()
+        }else {
+            //Database.repeatList.remove(at: <#T##Int#>)
+        }
     }
 }
