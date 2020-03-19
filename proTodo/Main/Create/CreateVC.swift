@@ -32,10 +32,13 @@ class CreateVC: UIViewController {
         0xfadbe0, 0xeaadbd, 0xb88a9f, 0x876880, 0x554562]
    
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        self.hideKeyboardTapped()
         self.touchSetting()
         self.TextFieldSetting()
     }
@@ -55,30 +58,47 @@ extension CreateVC {
     func TextFieldSetting(){
         textField.attributedPlaceholder = NSAttributedString(string: "할 일을 입력하세요.",
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        textField.addTarget(self, action: #selector(keyboard), for: .touchDown)
     }
     
     @objc func completeAction(){
+        guard let memo = textField.text else {return}
+        //guard let
+        
+        let newTodo = Todo(memo: memo, color: selectColor, update: Date())
+        
+        Database.arrayList.append(newTodo)
+        Database.saveData()
+        presentingViewController?.viewWillAppear(true)
         // must insert save code
         dismiss(animated: true)
     }
     
     @objc func touchColorView(){
         isColorViewAppear = !isColorViewAppear
-        
+
         if isColorViewAppear {
-            self.collectionTopConstraint.constant = 140
-            self.textViewTopConstraint.constant = 148 + ColorCollectionView.frame.height
+            self.collectionTopConstraint.constant = 145
+            self.textViewTopConstraint.constant = 153 + ColorCollectionView.frame.height
         } else {
-            self.collectionTopConstraint.constant = -141
-            self.textViewTopConstraint.constant = 148
+            self.collectionTopConstraint.constant = -146
+            self.textViewTopConstraint.constant = 153
         }
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {self.view.layoutIfNeeded()})
+    }
+    
+    @objc func keyboard(){
+        if isColorViewAppear == true {
+            registerForKeyboard()
+        } else {
+            removeForKeyboard()
+        }
     }
 }
 
 
 extension CreateVC : UITextFieldDelegate {
-    
+
 }
 
 
@@ -108,6 +128,8 @@ extension CreateVC : UICollectionViewDataSource, UICollectionViewDelegate {
         
         cell.layer.cornerRadius = 17
         cell.colorImg.backgroundColor = UIColor.colorRGBHex(hex: items[indexPath.item])
+        selectColor = indexPath.item
+        
         return cell
     }
 }

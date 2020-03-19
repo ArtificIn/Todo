@@ -85,6 +85,7 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <outlet property="colorView" destination="sw5-Qj-bNi" id="AJu-06-Tnm"/>
                                                     <outlet property="textField" destination="dMV-ok-fcG" id="qX7-HX-Upl"/>
                                                 </connections>
                                             </tableViewCell>
@@ -277,7 +278,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="da4-vl-8XP" userLabel="colorView">
-                                <rect key="frame" x="0.0" y="79" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="79" width="375" height="68"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAG-s8-8yi">
                                         <rect key="frame" x="42" y="14.5" width="27" height="27"/>
@@ -292,7 +293,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라벨 색깔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVt-KF-uvq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="색상 색깔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVt-KF-uvq">
                                         <rect key="frame" x="94" y="15.5" width="74" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="OVt-KF-uvq" secondAttribute="height" multiplier="67:23" id="3FW-Cu-xn3"/>
@@ -312,12 +313,12 @@
                                 <color key="backgroundColor" red="0.21563875675201416" green="0.20784124732017517" blue="0.20784330368041992" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="IAG-s8-8yi" firstAttribute="leading" secondItem="da4-vl-8XP" secondAttribute="leading" constant="42" id="Fgf-7l-umP"/>
-                                    <constraint firstItem="pce-RA-BRC" firstAttribute="centerY" secondItem="da4-vl-8XP" secondAttribute="centerY" constant="-5" id="N0P-ub-PT0"/>
+                                    <constraint firstItem="pce-RA-BRC" firstAttribute="centerY" secondItem="da4-vl-8XP" secondAttribute="centerY" constant="-9" id="N0P-ub-PT0"/>
                                     <constraint firstItem="pce-RA-BRC" firstAttribute="leading" secondItem="OVt-KF-uvq" secondAttribute="trailing" constant="11" id="TEA-sb-lrC"/>
-                                    <constraint firstItem="OVt-KF-uvq" firstAttribute="centerY" secondItem="da4-vl-8XP" secondAttribute="centerY" constant="-2" id="VHk-9p-j33"/>
-                                    <constraint firstAttribute="height" constant="60" id="Vzr-Tn-nvc"/>
+                                    <constraint firstItem="OVt-KF-uvq" firstAttribute="centerY" secondItem="da4-vl-8XP" secondAttribute="centerY" constant="-6" id="VHk-9p-j33"/>
+                                    <constraint firstAttribute="height" constant="68" id="Vzr-Tn-nvc"/>
                                     <constraint firstItem="OVt-KF-uvq" firstAttribute="leading" secondItem="IAG-s8-8yi" secondAttribute="trailing" constant="25" id="atr-RT-bXh"/>
-                                    <constraint firstItem="IAG-s8-8yi" firstAttribute="centerY" secondItem="da4-vl-8XP" secondAttribute="centerY" constant="-2" id="rom-CG-zNJ"/>
+                                    <constraint firstItem="IAG-s8-8yi" firstAttribute="centerY" secondItem="da4-vl-8XP" secondAttribute="centerY" constant="-6" id="rom-CG-zNJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ai-G2-mZN">

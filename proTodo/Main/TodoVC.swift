@@ -14,12 +14,19 @@ class TodoVC: UIViewController {
     @IBOutlet weak var menuBar: UIStackView!
     var selectedIndex : NSInteger! = -1
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.todoList.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         delegate()
-        self.hideKeyboardTapped()
+        //hideKeyboardTapped()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     private func delegate(){
@@ -53,7 +60,8 @@ extension TodoVC : UITableViewDelegate, UITableViewDataSource {
         let todo = Database.arrayList[indexPath.row]
         let cell: todoCell = tableView.dequeueReusableCell(withIdentifier: "todocell") as! todoCell
         
-        cell.textField?.text = todo.memo 
+        cell.textField?.text = todo.memo
+        cell.colorView.backgroundColor = UIColor.colorRGBHex(hex: todo.color)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         return cell
@@ -77,15 +85,16 @@ extension TodoVC : UITableViewDelegate, UITableViewDataSource {
         
         let label = UILabel()
         label.frame = CGRect.init(x:20, y:10, width: headerView.frame.width-10, height: headerView.frame.height - 10)
-        label.text = "12월 2일 할일 목록"
+        label.text = Date2String(date: Date(), format: "MM월 dd일 할일 목록")
         label.textColor = UIColor.white
-        label.font = UIFont.systemFont(ofSize: 24)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+
         
         let label2 = UILabel()
         label2.frame = CGRect.init(x: tableView.frame.width / 10 * 7.6, y: 20, width: 41, height: 17)
         label2.text = "반복"
         label2.textColor = UIColor.white
-        label2.font = UIFont.systemFont(ofSize: 18)
+        label2.font = UIFont.systemFont(ofSize: 20)
         
         headerView.addSubview(label)
         headerView.addSubview(label2)

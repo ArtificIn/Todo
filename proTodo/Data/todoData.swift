@@ -12,6 +12,8 @@ let Database : TodoModel = TodoModel()
 let TodoFileName = "ProTodoList.file"
 let projectName = "ProTodo"
 
+
+
 class TodoModel {
     var arrayList : [Todo] = [] // 일반 저장
     var repeatList : [Todo] = [] // 반복하는 할 일 저장
@@ -26,9 +28,9 @@ class TodoModel {
     }
     
     func defaultData() -> Array<Todo>{
-        let stock = Todo(memo: "앱 업데이트", color: 0x343434, update: Date(), number: 0)
-        let stock2 = Todo(memo: "쇼핑하기", color: 0x56de4, update: Date() - 86400, number: 1)
-        let stock3 = Todo(memo: "운동하기", color: 0x34de53, update: Date(), number: 2)
+        let stock = Todo(memo: "앱 업데이트", color: 0xafeeee, update: Date())
+        let stock2 = Todo(memo: "쇼핑하기", color: 0xffbe46, update: Date() - 86400)
+        let stock3 = Todo(memo: "운동하기", color: 0x34de53, update: Date())
         return [stock, stock2, stock3]
     }
     
@@ -46,27 +48,24 @@ class TodoModel {
 class Todo : NSObject, NSCoding {
     var memo : String
     var color : Int
-    var number : Int = 0 // 우선순위
+//    var number : Int = 0 // 우선순위
     var update : Date // 소속 날짜
     
-    init(memo:String, color:Int, update: Date, number: Int) {
+    init(memo:String, color:Int, update: Date) {
         self.memo = memo
         self.color = color
         self.update = update
-        self.number = number
     }
     
     func encode(with coder: NSCoder) {
         coder.encode(self.memo, forKey: "memo")
         coder.encode(self.color, forKey: "color")
         coder.encode(self.update, forKey: "update")
-        coder.encode(self.number, forKey: "number")
     }
     
     required init?(coder: NSCoder) {
         self.memo = coder.decodeObject(forKey: "memo") as! String
         self.color = coder.decodeObject(forKey: "color") as! Int
-        self.number = coder.decodeObject(forKey: "number") as! Int
         self.update = coder.decodeObject(forKey: "update") as! Date
     }
 }

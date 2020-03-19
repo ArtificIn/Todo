@@ -19,13 +19,34 @@ extension UIColor {
 }
 
 extension UIViewController{
-    func hideKeyboardTapped(){
-        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+    func Date2String(date : Date, format : String) -> String {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = format
+        return dateformatter.string(from: date)
     }
-    @objc func dismissKeyboard(){
-        view.endEditing(true)
+    
+    func String2Date(date : String) -> Date {
+        let dateformatter = DateFormatter()
+        return dateformatter.date(from: date)!
+    }
+    
+    
+    func registerForKeyboard(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc func keyboardShow(_ sender: Notification){
+        self.view.frame.origin.y = -150
+    }
+    
+    @objc func keyboardHide(_ sender: Notification){
+        self.view.frame.origin.y = 0
+    }
+    
+    func removeForKeyboard(){
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 

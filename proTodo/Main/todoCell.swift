@@ -8,9 +8,10 @@
 
 import UIKit
 
-class todoCell: UITableViewCell, UITextFieldDelegate {
+class todoCell: UITableViewCell {
     @IBOutlet weak var textField: UITextField!
-
+    @IBOutlet weak var colorView: UIView!
+    
     let leftMarginForLabel : CGFloat = 15.0
     var listItems:Todo? {
         didSet{
@@ -28,6 +29,17 @@ class todoCell: UITableViewCell, UITextFieldDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        textfieldSetting()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+}
+
+
+extension todoCell : UITextFieldDelegate {
+    func textfieldSetting(){
         textField.delegate = self
         textField.textColor = UIColor.white
         textField.font = UIFont.systemFont(ofSize: 24)
@@ -39,10 +51,6 @@ class todoCell: UITableViewCell, UITextFieldDelegate {
         return false
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if listItems != nil {
             listItems?.memo = textField.text!
@@ -50,4 +58,3 @@ class todoCell: UITableViewCell, UITextFieldDelegate {
         return true
     }
 }
-
