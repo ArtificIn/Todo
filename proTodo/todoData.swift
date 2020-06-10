@@ -16,7 +16,7 @@ let projectName = "ProTodo"
 
 class TodoModel {
     var arrayList : [Todo] = [] // 일반 저장
-    var repeatList : [Todo] = [] // 반복하는 할 일 저장
+    var repeatList : [Todo] = [] // 반복하는 할일 저장
     
     var mainfilePath: String { get {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
@@ -48,7 +48,6 @@ class TodoModel {
 class Todo : NSObject, NSCoding {
     var memo : String
     var color : Int
-//    var number : Int = 0 // 우선순위
     var update : Date // 소속 날짜
     
     init(memo:String, color:Int, update: Date) {

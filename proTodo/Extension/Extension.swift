@@ -6,7 +6,6 @@
 //  Copyright © 2019 성다연. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIColor {
@@ -28,25 +27,6 @@ extension UIViewController{
     func String2Date(date : String) -> Date {
         let dateformatter = DateFormatter()
         return dateformatter.date(from: date)!
-    }
-    
-    
-    func registerForKeyboard(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-    }
-    
-    @objc func keyboardShow(_ sender: Notification){
-        self.view.frame.origin.y = -150
-    }
-    
-    @objc func keyboardHide(_ sender: Notification){
-        self.view.frame.origin.y = 0
-    }
-    
-    func removeForKeyboard(){
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 

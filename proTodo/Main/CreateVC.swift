@@ -63,7 +63,6 @@ extension CreateVC {
     func TextFieldSetting(){
         textField.attributedPlaceholder = NSAttributedString(string: "할 일을 입력하세요.",
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        textField.addTarget(self, action: #selector(keyboard), for: .touchDown)
     }
     
     @objc func completeAction(){
@@ -92,14 +91,6 @@ extension CreateVC {
         }
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {self.view.layoutIfNeeded()})
     }
-    
-    @objc func keyboard(){
-        if isColorViewAppear == true {
-            registerForKeyboard()
-        } else {
-            removeForKeyboard()
-        }
-    }
 }
 
 
@@ -115,8 +106,6 @@ extension CreateVC : UICollectionViewDataSource, UICollectionViewDelegate {
         let cell = ColorCollectionView.cellForItem(at: indexPath)
         selectColor = items[indexPath.item]
         selectedColorView.backgroundColor = UIColor.colorRGBHex(hex: selectColor)
-        // int -> hex
-        // var st = NSString(format: "%02X", selectColor)
         cell?.backgroundColor = UIColor.darkGray
         
     }
@@ -127,12 +116,17 @@ extension CreateVC : UICollectionViewDataSource, UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = ColorCollectionView.dequeueReusableCell(withReuseIdentifier: "colorcollectcell", for: indexPath) as! ColorCollectCell
+        let cell = ColorCollectionView.dequeueReusableCell(withReuseIdentifier: "colorcollectcell", for: indexPath) as! ColorCollectionCell
         
         cell.layer.cornerRadius = 17
-        cell.colorImg.backgroundColor = UIColor.colorRGBHex(hex: items[indexPath.item])
+        cell.colorCell.backgroundColor = UIColor.colorRGBHex(hex: items[indexPath.item])
         selectColor = indexPath.item
         
         return cell
     }
+}
+
+
+class ColorCollectionCell : UICollectionViewCell {
+    @IBOutlet weak var colorCell: UIView!
 }

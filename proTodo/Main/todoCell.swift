@@ -68,12 +68,6 @@ extension todoCell {
     }
     
     @objc func touchRepeatBtn(){
-        isRepeat != isRepeat
-        
-        if isRepeat == true {
-            //Database.repeatList.append()
-        }else {
-            //Database.repeatList.remove(at: <#T##Int#>)
-        }
+       
     }
 }
