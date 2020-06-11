@@ -9,22 +9,56 @@
 import UIKit
 
 class CalendarVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    // TopView
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var segmentLineView: UIView!
+    
+    // Calendar
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    // TodoList
+    @IBOutlet weak var todoTableView: UITableView!
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.todoTableView.reloadData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        delegatSetting()
     }
-    */
+}
 
+
+
+extension CalendarVC {
+    private func delegatSetting(){
+        todoTableView.delegate = self
+        todoTableView.dataSource = self
+    }
+}
+
+
+extension CalendarVC : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return TodoDatabase.arrayList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let todo = TodoDatabase.arrayList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todocell") as! todoCell
+                   
+        cell.textField?.text = todo.memo
+        cell.colorView.backgroundColor = UIColor.colorRGBHex(hex: todo.color)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+                   
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 }

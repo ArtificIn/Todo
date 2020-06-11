@@ -56,7 +56,6 @@ class CustomSegmentedControl : UIView {
             
             button.setTitle(buttonTitle, for: .normal)
             button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
-            
         
             button.addTarget(self, action: #selector(CustomSegmentedControl.buttonAction(sender:)), for: .touchUpInside)
             button.setTitleColor(textColor, for: .normal)
@@ -70,6 +69,7 @@ class CustomSegmentedControl : UIView {
         for (buttonIndex, btn) in buttons.enumerated() {
             buttonNumber = buttonIndex
             btn.setTitleColor(textColor, for: .normal)
+            
             if btn == sender {
                 let selectorPosition = frame.width / CGFloat(buttonTitles.count) * CGFloat(buttonIndex)
                 UIView.animate(withDuration: 0.3) {

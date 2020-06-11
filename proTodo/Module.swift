@@ -1,16 +1,59 @@
 //
-//  todoData.swift
+//  CalendarData.swift
 //  proTodo
 //
-//  Created by 성다연 on 30/09/2019.
-//  Copyright © 2019 성다연. All rights reserved.
+//  Created by 성다연 on 2020/06/11.
+//  Copyright © 2020 성다연. All rights reserved.
 //
 
 import Foundation
 
-let Database : TodoModel = TodoModel()
-let TodoFileName = "ProTodoList.file"
 let projectName = "ProTodo"
+
+let TodoDatabase : TodoModel = TodoModel()
+let TodoFileName = "ProTodoList.file"
+
+
+
+enum Colors {
+    case 0 :
+}
+
+struct Labelling {
+    var name : String
+    var color : Int
+}
+
+struct Project {
+    var name : String
+    var endDate : Date
+}
+
+class Todo : NSObject, NSCoding {
+    var memo : String
+    var color : Int
+    var update : Date // 소속 날짜
+    var labels : [Labelling]?
+    var projects : [Project]?
+    
+    init(memo:String, color:Int, update: Date) {
+        self.memo = memo
+        self.color = color
+        self.update = update
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(self.memo, forKey: "memo")
+        coder.encode(self.color, forKey: "color")
+        coder.encode(self.update, forKey: "update")
+    }
+    
+    required init?(coder: NSCoder) {
+        self.memo = coder.decodeObject(forKey: "memo") as! String
+        self.color = coder.decodeObject(forKey: "color") as! Int
+        self.update = coder.decodeObject(forKey: "update") as! Date
+    }
+}
 
 
 
@@ -42,30 +85,6 @@ class TodoModel {
         } else {
             arrayList = defaultData()
         }
-    }
-}
-
-class Todo : NSObject, NSCoding {
-    var memo : String
-    var color : Int
-    var update : Date // 소속 날짜
-    
-    init(memo:String, color:Int, update: Date) {
-        self.memo = memo
-        self.color = color
-        self.update = update
-    }
-    
-    func encode(with coder: NSCoder) {
-        coder.encode(self.memo, forKey: "memo")
-        coder.encode(self.color, forKey: "color")
-        coder.encode(self.update, forKey: "update")
-    }
-    
-    required init?(coder: NSCoder) {
-        self.memo = coder.decodeObject(forKey: "memo") as! String
-        self.color = coder.decodeObject(forKey: "color") as! Int
-        self.update = coder.decodeObject(forKey: "update") as! Date
     }
 }
 

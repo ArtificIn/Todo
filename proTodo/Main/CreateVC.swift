@@ -69,10 +69,10 @@ extension CreateVC {
         guard let memo = textField.text else {return}
         //guard let
         
-        if (memo != ""){
+        if !memo.isEmpty {
             let newTodo = Todo(memo: memo, color: selectColor, update: Date())
-            Database.arrayList.append(newTodo)
-            Database.saveData()
+            TodoDatabase.arrayList.append(newTodo)
+            TodoDatabase.saveData()
         }
         presentingViewController?.viewWillAppear(true)
         // must insert save code
