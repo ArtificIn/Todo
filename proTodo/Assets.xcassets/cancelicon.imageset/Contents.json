@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "moveimg.png",
+      "filename" : "cancelicon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "moveimg@2x.png",
+      "filename" : "cancelicon@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "moveimg@3x.png",
+      "filename" : "cancelicon@3x.png",
       "scale" : "3x"
     }
   ],

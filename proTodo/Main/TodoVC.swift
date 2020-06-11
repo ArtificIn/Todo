@@ -44,7 +44,7 @@ extension TodoVC {
         
     private func createSegmentedControl(){
         let codeSegmented = CustomSegmentedControl(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 50),
-                buttonTitle:["주간", "통계"])
+                buttonTitle:["Calendar", "Project"])
 
         codeSegmented.backgroundColor = UIColor.colorRGBHex(hex: 0x373535)
         view.addSubview(codeSegmented)
