@@ -13,11 +13,15 @@ let TodoListFileName = "TodoList.file"
 let ProjectListFileName = "ProjectList.file"
 let LabelListFileName = "LabelList.file"
 
+let TodoArrayList = TodoList()
+let LabelArrayList = LabelList()
+let ProjectArrayList = ProjectList()
 
 protocol Codability : Codable {}
 
 extension Codability {
     typealias T = Self
+    
     func encode() -> Data? {
         return try? JSONEncoder().encode(self)
     }
@@ -27,25 +31,45 @@ extension Codability {
     }
 }
 
-
 struct Label : Codability {
     var name : String
     var color : Int
+    
+    init(name : String, color : Int) {
+        self.name = name
+        self.color = color
+    }
 }
 
-struct LabelList : Codability {
+class LabelList : Codability {
     var arrayList : [Label]
+    
+    init() {
+        self.arrayList = []
+    }
 }
 
 
 struct Todo : Codability {
     var title : String
-    var label : [Label]
     var date : String
+    var label : [Label]
+    var color : Int
+    
+    init(title : String, date : String, label : [Label], color : Int) {
+        self.title = title
+        self.date = date
+        self.label = label
+        self.color = color
+    }
 }
 
-struct TodoList : Codability {
+class TodoList : Codability {
     var arrayList : [Todo]
+    
+    init() {
+        self.arrayList = []
+    }
 }
 
 
@@ -54,8 +78,19 @@ struct Project : Codability {
     var date : String
     var notice : Bool
     var todo : [Todo]
+    
+    init(name : String, date : String, notice : Bool, todo : [Todo]) {
+        self.name = name
+        self.date = date
+        self.notice = notice
+        self.todo = todo
+    }
 }
 
-struct ProjectList : Codability {
+class ProjectList : Codability {
     var arrayList : [Project]
+    
+    init(){
+        self.arrayList = []
+    }
 }

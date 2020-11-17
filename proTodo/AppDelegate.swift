@@ -31,11 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        TodoDatabase.saveData()
+//        TodoDatabase.saveData()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        TodoDatabase.saveData()
+//        TodoDatabase.saveData()
     }
 
 }

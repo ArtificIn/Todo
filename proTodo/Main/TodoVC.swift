@@ -58,14 +58,14 @@ extension TodoVC {
 
 extension TodoVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TodoDatabase.arrayList.count
+        return TodoArrayList.arrayList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let todo = TodoDatabase.arrayList[indexPath.row]
+        let todo = TodoArrayList.arrayList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "todocell") as! todoCell
             
-        cell.textField?.text = todo.memo
+        cell.textField?.text = todo.title
         cell.colorView.backgroundColor = UIColor.colorRGBHex(hex: todo.color)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
             

@@ -23,6 +23,7 @@
 		9B9FEC6F24924AE400162F27 /* CalendarAddTodoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9FEC6E24924AE400162F27 /* CalendarAddTodoVC.swift */; };
 		9BD1E73523C5DBA9007DCCEA /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD1E73423C5DBA9007DCCEA /* CustomTabbar.swift */; };
 		9BD1E73723C5DE45007DCCEA /* CustomTabbarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD1E73623C5DE45007DCCEA /* CustomTabbarCell.swift */; };
+		9BFFD2BE2563E1BD0060CEF0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BFFD2BC2563E1BD0060CEF0 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9B9FEC6E24924AE400162F27 /* CalendarAddTodoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddTodoVC.swift; sourceTree = "<group>"; };
 		9BD1E73423C5DBA9007DCCEA /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		9BD1E73623C5DE45007DCCEA /* CustomTabbarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarCell.swift; sourceTree = "<group>"; };
+		9BFFD2BD2563E1BD0060CEF0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				9B30360F2341C24E0094550A /* AppDelegate.swift */,
 				9B3036182341C24F0094550A /* Assets.xcassets */,
 				9B30361D2341C24F0094550A /* Info.plist */,
+				9BFFD2BC2563E1BD0060CEF0 /* Model.xcdatamodeld */,
 			);
 			path = proTodo;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				9B30362D2341CB340094550A /* TodoVC.swift in Sources */,
 				9B951822249255F000EB6FA1 /* Module.swift in Sources */,
 				9B3036142341C24E0094550A /* CustomSegmentedControl.swift in Sources */,
+				9BFFD2BE2563E1BD0060CEF0 /* Model.xcdatamodeld in Sources */,
 				9B9FEC6F24924AE400162F27 /* CalendarAddTodoVC.swift in Sources */,
 				9B9FEC6B24923DC700162F27 /* CalendarVC.swift in Sources */,
 				9B8DA4752341EFE300096A0E /* Checkbox.swift in Sources */,
@@ -410,6 +414,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9BFFD2BC2563E1BD0060CEF0 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9BFFD2BD2563E1BD0060CEF0 /* Model.xcdatamodel */,
+			);
+			currentVersion = 9BFFD2BD2563E1BD0060CEF0 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B3036042341C24E0094550A /* Project object */;
 }

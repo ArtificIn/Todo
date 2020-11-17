@@ -17,7 +17,7 @@ class todoCell: UITableViewCell {
     var isRepeat : Bool = false
     var listItems:Todo? {
         didSet{
-            textField.text = listItems!.memo
+            textField.text = listItems!.title
         }
     }
     
@@ -55,7 +55,7 @@ extension todoCell : UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if listItems != nil {
-            listItems?.memo = textField.text!
+            listItems?.title = textField.text!
         }
         return true
     }

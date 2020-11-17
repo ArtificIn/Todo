@@ -66,13 +66,13 @@ extension CreateVC {
     }
     
     @objc func completeAction(){
-        guard let memo = textField.text else {return}
+        guard let title = textField.text else {return}
         //guard let
         
-        if !memo.isEmpty {
-            let newTodo = Todo(memo: memo, color: selectColor, update: Date())
-            TodoDatabase.arrayList.append(newTodo)
-            TodoDatabase.saveData()
+        if !title.isEmpty {
+            let newTodo = Todo(title: title, date: Date2String(date: Date(), format: "yy.MM.dd"), label: [], color: selectColor)
+            TodoArrayList.arrayList.append(newTodo)
+            //TodoArrayList.saveData()
         }
         presentingViewController?.viewWillAppear(true)
         // must insert save code
